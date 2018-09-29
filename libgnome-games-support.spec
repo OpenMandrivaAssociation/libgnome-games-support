@@ -7,7 +7,7 @@
 
 Name:		libgnome-games-support
 Version:	1.4.2
-Release:	%mkrel 2
+Release:	1
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
 License:	LGPLv3+
