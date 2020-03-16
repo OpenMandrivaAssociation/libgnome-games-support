@@ -6,7 +6,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		libgnome-games-support
-Version:	1.4.4
+Version:	1.6.0
 Release:	1
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
@@ -17,7 +17,9 @@ BuildRequires:	pkgconfig(glib-2.0) >= 2.40
 BuildRequires:	pkgconfig(gio-2.0) >= 2.40
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.12
 BuildRequires:	pkgconfig(gee-0.8)
+BuildRequires:  pkgconfig(vapigen)
 BuildRequires:	intltool
+BuildRequires:  meson
 
 %description
 libgnome-games-support is a small library intended for internal use by GNOME Games,
@@ -74,11 +76,11 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 find %{buildroot} -name '*.la' -delete
 
