@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(glib-2.0) >= 2.40
 BuildRequires:	pkgconfig(gio-2.0) >= 2.40
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.12
 BuildRequires:	pkgconfig(gee-0.8)
+BuildRequires:  pkgconfig(vapigen)
 BuildRequires:	intltool
 BuildRequires:  meson
 
