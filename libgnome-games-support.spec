@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(gio-2.0) >= 2.40
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.12
 BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:	intltool
+BuildRequires:  meson
 
 %description
 libgnome-games-support is a small library intended for internal use by GNOME Games,
@@ -74,11 +75,11 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make_build
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 find %{buildroot} -name '*.la' -delete
 
