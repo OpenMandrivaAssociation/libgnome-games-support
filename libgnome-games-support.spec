@@ -6,7 +6,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		libgnome-games-support
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
