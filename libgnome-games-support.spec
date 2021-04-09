@@ -7,7 +7,7 @@
 
 Name:		libgnome-games-support
 Version:	1.8.1
-Release:	1
+Release:	2
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
 License:	LGPLv3+
