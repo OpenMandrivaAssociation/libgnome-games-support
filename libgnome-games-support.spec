@@ -1,5 +1,5 @@
-%define major		3
-%define api		1
+%define major		4
+%define api		2
 %define libname		%mklibname gnome-games-support
 %define develname	%mklibname gnome-games-support -d
 
