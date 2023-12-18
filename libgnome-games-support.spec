@@ -87,9 +87,9 @@ developing applications that use %{name}.
 
 find %{buildroot} -name '*.la' -delete
 
-%find_lang %{name}
+%find_lang %{name}-2
 
-%files i18n -f %{name}.lang
+%files i18n -f %{name}-2.lang
 
 %files -n %{libname}
 %doc README
