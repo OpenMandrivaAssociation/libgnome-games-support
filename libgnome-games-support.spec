@@ -1,13 +1,13 @@
 %define major		3
 %define api		1
-%define libname		%mklibname gnome-games-support %{api} %{major}
+%define libname		%mklibname gnome-games-support
 %define develname	%mklibname gnome-games-support -d
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 Name:		libgnome-games-support
-Version:	1.8.2
-Release:	4
+Version:	2.0.0
+Release:	1
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
 License:	LGPLv3+
@@ -15,7 +15,7 @@ URL:		https://git.gnome.org/browse/%{name}/
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(glib-2.0) >= 2.40
 BuildRequires:	pkgconfig(gio-2.0) >= 2.40
-BuildRequires:	pkgconfig(gtk+-3.0) >= 3.12
+BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:	intltool
@@ -73,7 +73,7 @@ developing applications that use %{name}.
 #------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson
