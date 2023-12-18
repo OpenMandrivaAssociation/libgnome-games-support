@@ -5,6 +5,9 @@
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 Name:		libgnome-games-support
 Version:	2.0.0
 Release:	1
