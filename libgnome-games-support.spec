@@ -1,13 +1,16 @@
-%define major		3
-%define api		1
-%define libname		%mklibname gnome-games-support %{api} %{major}
+%define major		4
+%define api		2
+%define libname		%mklibname gnome-games-support
 %define develname	%mklibname gnome-games-support -d
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 Name:		libgnome-games-support
-Version:	1.8.2
-Release:	4
+Version:	2.0.0
+Release:	1
 Summary:	Support library for GNOME games
 Group:		Development/GNOME and GTK+
 License:	LGPLv3+
@@ -15,7 +18,7 @@ URL:		https://git.gnome.org/browse/%{name}/
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(glib-2.0) >= 2.40
 BuildRequires:	pkgconfig(gio-2.0) >= 2.40
-BuildRequires:	pkgconfig(gtk+-3.0) >= 3.12
+BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:	intltool
@@ -73,7 +76,7 @@ developing applications that use %{name}.
 #------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %meson
@@ -84,9 +87,9 @@ developing applications that use %{name}.
 
 find %{buildroot} -name '*.la' -delete
 
-%find_lang %{name}
+%find_lang %{name}2
 
-%files i18n -f %{name}.lang
+%files i18n -f %{name}2.lang
 
 %files -n %{libname}
 %doc README
